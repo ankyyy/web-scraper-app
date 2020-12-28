@@ -1,21 +1,10 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import { isValidHttpUrl } from '../util';
 
 const BooleanRenderer = (value) => value === true ? 'True' : 'False'
 const UrlRenderer = (value) => {
     return (<a href={value} target="blank">{value}</a>)
-}
-
-function isValidHttpUrl(string) {
-    let url;
-
-    try {
-        url = new URL(string);
-    } catch (_) {
-        return false;
-    }
-
-    return url.protocol === "http:" || url.protocol === "https:";
 }
 
 const render = (value) => {
@@ -38,12 +27,12 @@ function TableComponent({ rows = [], headerMap = {} }) {
         <Table striped bordered hover responsive="sm">
             <thead>
                 <tr>
-                    {headers.map(header => <th>{headerMap[header]}</th>)}
+                    {headers.map((header, index) => <th key={'tablehead_' + index}>{headerMap[header]}</th>)}
                 </tr>
             </thead>
             <tbody>
-                {rows.map((row,index) => <tr key={'table_'+index}>{headers.map(header =>
-                    <td>{render(row[header])}</td>)}
+                {rows.map((row, index) => <tr key={'tablerow_' + index}>{headers.map((header,index) =>
+                    <td key={'tablehead_'+index}>{render(row[header])}</td>)}
                 </tr>)}
             </tbody>
         </Table>

@@ -7,7 +7,6 @@ function Dialog({ show, onClose, message }) {
             <Modal.Header closeButton>
                 <Modal.Title>{message}</Modal.Title>
             </Modal.Header>
-            {/* <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body> */}
         </Modal>
     );
 }
