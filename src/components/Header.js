@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="card text-center">
-      <div className="card-header">
+      <div className="card-header pb-4">
         <ul className="nav nav-tabs card-header-tabs">
           <li className="nav-item mx-2">
             <Link to="/">Home</Link>

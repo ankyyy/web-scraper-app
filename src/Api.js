@@ -13,6 +13,9 @@ async function postData(path = '', data = {}) {
             const error = await response.text()
             return { error }
         }
+        if(response.status === 500){
+            return {error:'Internal Server Error'}
+        }
         return response.json();
     }
     catch (e) {

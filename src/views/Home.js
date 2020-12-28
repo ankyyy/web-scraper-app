@@ -38,14 +38,15 @@ function Home() {
             setShowDialog({ show: true, message: response.error })
             return
         }
-        setShowDialog(true)
+
+        setShowDialog({ show: true, message: 'Data Saved' })
         setSpinner(false)
     }
     return (
         <div>
             <SearchBar onSearch={fetchAnchorsTags} onClear={() => setLinks([])}></SearchBar>
             <div className="mt-4">
-                {!!links.length && <Button variant="primary" onClick={() => saveSources()}>Save Result</Button>}
+                {!!links.length && <Button className="mb-2" variant="primary" onClick={() => saveSources()}>Save Result</Button>}
 
                 <TableComponent rows={links} headerMap={HEADER_MAP}></TableComponent>
             </div>
