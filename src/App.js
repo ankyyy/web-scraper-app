@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Home from './views/Home';
 import Sources from './views/Sources';
 import SourceDetails from './views/SourceDetails';
