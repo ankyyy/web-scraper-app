@@ -29,6 +29,7 @@ function Home() {
             setShowDialog({ show: true, message: response.error })
             return
         }
+        console.log(response)
         setLinks(response.result)
     }
     const saveSources = async () => {
